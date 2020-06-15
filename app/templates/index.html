@@ -5,6 +5,7 @@
         <title>Sezzle Calculator</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
         <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1" />
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     </head>
     <body>
         <div id="container">
@@ -50,8 +51,8 @@
     </body>
     
     <script src="../static/js/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
-    <script src="{{ url_for('static', filename='js/model.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/view.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/controller.js') }}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/model.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/view.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/controller.js') }}"></script>
 </html>
