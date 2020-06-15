@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta name="robots" content="noindex">
+        <title>Sezzle Calculator</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <div id="container">
+            <h2>Sezzle Calculator</h2>
+            <p class="flash"></p>
+            <div class="calculator">
+                <div id="display">
+                    <p></p>
+                </div>
+                <div class="inputs">
+                    <button class="key--operator" id="add">+</button>
+                    <button class="key--operator" id="subtract">-</button>
+                    <button class="key--operator" id="multiply">&times;</button>
+                    <button class="key--operator" id="divide">/</button>
+                    <button class="key--num">7</button>
+                    <button class="key--num">8</button>
+                    <button class="key--num">9</button>
+                    <button class="key--num">4</button>
+                    <button class="key--num">5</button>
+                    <button class="key--num">6</button>
+                    <button class="key--num">1</button>
+                    <button class="key--num">2</button>
+                    <button class="key--num">3</button>
+                    <button class="key--num">0</button>
+                    <button class="key--decimal">.</button>
+                    <button id="clear">AC</button>
+                    <button class="key--equal" id="calculate">=</button>
+                </div>
+            </div>
+            
+            <p id="error"></p>
+            
+            <div class="messages">
+                <p class="log-head">Calculations</p>
+                
+                <div id="log-box">
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </body>
+    
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/model.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/view.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/controller.js') }}"></script>
+</html>

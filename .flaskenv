@@ -1,0 +1,3 @@
+FLASK_APP=calc.py
+FLASK_ENV=development
+SECRET_KEY=poopysnoopy
