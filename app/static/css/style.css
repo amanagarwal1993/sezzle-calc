@@ -1,6 +1,5 @@
 html {
   box-sizing: border-box;
-  font-size: 0.7em;
   font-weight: 300;
   line-height: 1;
 }
@@ -9,6 +8,7 @@ body {
   margin: 0;
   align-items: center;
   display: flex;
+  font-size: 20px;
   justify-content: center;
   font-family: Helvetica, Arial, sans-serif;
 }
@@ -98,6 +98,7 @@ button {
   outline: none;
   appearance: none;
   text-align: left;
+  cursor: pointer;
 }
 
 
