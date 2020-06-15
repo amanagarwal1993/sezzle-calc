@@ -1,1 +1,1 @@
-web: flask db upgrade; gunicorn --workers=5 --timeout=30 calc:flaskapp
+web: flask db upgrade; gunicorn --worker-class eventlet -w 1 calc:flaskapp
