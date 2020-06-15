@@ -3,10 +3,11 @@ var controller = {
     init: function() {
         controller.socket = io.connect('http://' + document.domain + ':' + location.port + '/test');
         
+        // Initialize model and view
         view.init();
-        
         model.init()
         
+        // Setup socket events
         controller.socket.on('calculation', function(msg) {
             model.logs.concat(msg);
             //add to view, and play a little sound!
@@ -37,6 +38,7 @@ var controller = {
         });
     },
     
+    // When a user presses an operator button eg: +, -, /
     press_operator: function(input) {
         if (model.last_input == 'zero' && input=="-") {
             model.current_calculation = input;
@@ -50,6 +52,7 @@ var controller = {
         }
     },
     
+    // When user presses number button eg: 0-9
     press_num: function(input) {
         
         if (model.last_input == 'zero') {
@@ -70,11 +73,13 @@ var controller = {
         model.last_input = 'num';
     },
     
+    // When user presses AC button
     press_clear: function() {
         model.current_calculation = '0';
         model.last_input = 'zero';
     },
     
+    // When user presses the '=' button to get a result
     calculate: function() {
         controller.socket.emit('calculate', model.current_calculation);
         model.current_calculation = '0';

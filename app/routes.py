@@ -17,16 +17,14 @@ def index():
 def calculate_expression(query):
     try:
         answer = simple_eval(query)
-        
         result = Result(expr=query, answer=answer)
         db.session.add(result)
         db.session.commit()
-        
         emit('result', {'query': query, 'answer': answer}, broadcast=False)
         emit('calculation', {'query': query, 'answer': answer}, broadcast=True)
     except:
         emit('invalid query', {'response': 'Invalid query. Please check and try again.'}, broadcast=False)   
-    
+
 @socketio.on('connect', namespace='/test')
 def test_connect():
     prev_results = Result.query.limit(10)
@@ -36,7 +34,6 @@ def test_connect():
         results.append({'query': this.expr, 'answer': this.answer})
     print ('Client connected')
     emit('connection', {'data': results})
-    
 
 @socketio.on('disconnect', namespace='/test')
 def test_disconnect():
