@@ -1,1 +1,1 @@
-web: flask db upgrade; gunicorn --workers=3 --timeout=30 calc:flaskapp
+web: flask db upgrade; flask run
