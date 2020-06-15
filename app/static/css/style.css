@@ -99,6 +99,7 @@ button {
   outline: none;
   appearance: none;
   text-align: left;
+  cursor: pointer;
 }
 
 
