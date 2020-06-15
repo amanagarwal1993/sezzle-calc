@@ -36,10 +36,12 @@ var view = {
         $('.flash').text('Trying to connect...');
     },
     
-    show_connection: function() {
+    show_connection: function(results) {
         $('.key--equal').css('background-image', 'linear-gradient(to bottom, #fe886a, #ff7033)');
         $('#display').css('background-color', '#a3f0ff');
         $('.flash').text('Connected to server!');
+        
+        view.refresh_log(results);
     },
     
     start_row: function(num) {
@@ -65,6 +67,17 @@ var view = {
         $('#display').append('<p>' + input + '</p>');
     },
     
+    refresh_log: function(results) {
+        $('#log-box > *').remove();
+        /*
+        var i;
+        for(i = 0; i<10; i++) {
+            $('#log-box').prepend('<p><span style="color: black;">Query:</span> ' + results[i].query + ' <span style="color: black;">Result:</span> ' + results[i].answer + '</p>');
+        }
+        */
+        results.forEach(view.append_log);
+    },
+    
     update_result: function(result) {
         $('#display > *').remove();
         $('#display').append('<p>' + result + '</p>');
@@ -72,7 +85,7 @@ var view = {
     
     append_log: function(msg) {
         $('#log-box').prepend('<p><span style="color: black;">Query:</span> ' + msg.query + ' <span style="color: black;">Result:</span> ' + msg.answer + '</p>');
-    }, 
+    },
     
     show_error: function(error) {
         //$('#error').show();
