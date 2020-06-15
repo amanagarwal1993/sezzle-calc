@@ -1,6 +1,5 @@
 html {
   box-sizing: border-box;
-  font-size: 14px;
   font-weight: 300;
   line-height: 1;
 }
@@ -11,6 +10,8 @@ body {
   display: flex;
   justify-content: center;
   font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  
 }
 
 h2 {
