@@ -152,6 +152,6 @@ button {
   padding-left: 1em;
 }
 
-#log-box p:nth-child(even) {
+#log-box p:nth-child(odd) {
   background-color: #eff3fd;
 }
