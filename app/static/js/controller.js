@@ -27,7 +27,8 @@ var controller = {
         
         controller.socket.on('connection', function(msg) {
             console.log("Connected to server!");
-            view.show_connection();
+            console.log(msg.data);
+            view.show_connection(msg.data);
         });
         
         controller.socket.on('disconnect', function(msg) {
@@ -47,7 +48,6 @@ var controller = {
             model.last_input = 'ops';
             view.append_ops(input);
         }
-        console.log(model.current_calculation);
     },
     
     press_num: function(input) {
@@ -68,15 +68,11 @@ var controller = {
         }
         
         model.last_input = 'num';
-        
-        console.log(model.current_calculation);
     },
     
     press_clear: function() {
         model.current_calculation = '0';
         model.last_input = 'zero';
-        
-        console.log(model.current_calculation);
     },
     
     calculate: function() {
