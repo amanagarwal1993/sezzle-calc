@@ -7,6 +7,6 @@ This web application is a calculator that logs calculations as they happen and s
 4. Upon disconnection, when the client reconnects, the results are refreshed with the latest results from server.
 
 ### Tech Stack
-Flask/Python 3.6
-SQLite database (for this project, Postgres etc was overkill)
-HTML, CSS and a custom-made light MVC framework using jQuery.
+- Flask/Python 3.6
+- SQLite database (for this project, Postgres etc was overkill)
+- HTML, CSS and a custom-made light MVC framework using jQuery.
